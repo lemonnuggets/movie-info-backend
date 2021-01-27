@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script defer ></script> -->
+    <title>Movie Info</title>
+</head>
+<body>
+    <form action="/request" method="GET">
+        <div>
+            <label for="name">Movie Name</label><br />
+            <input type="text" id="name" name="name" required />
+        </div>
+        <br />
+        <div>
+            <label for="year">Year</label><br />
+            <input type="number" id="year" name="year" min="1900" max="2050" step="1" />
+        </div>
+        <br />
+        <button type="submit">Submit</button>
+    </form>
+    <!-- <textarea name="input"></textarea> -->
+</body>
+</html>
