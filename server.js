@@ -3,7 +3,7 @@ const express = require("express");
 const fetch = require("node-fetch")
 const app = express();
 let port = '5000';
-let url = 'localhost';
+let domain = 'localhost';
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 async function getInfo(movieName, year){
@@ -15,7 +15,7 @@ async function getInfo(movieName, year){
     return data
 }
 app.listen(port, () => {
-    console.log(`Listening at ${url}:${port}`)
+    console.log(`Listening at ${domain}:${port}`)
 })
 app.get('/', (req, res)=>{
     res.sendFile('./views/index.html', {root: __dirname})
@@ -23,8 +23,8 @@ app.get('/', (req, res)=>{
 app.get('/request', (req, res)=> {
     movieData = getInfo(req.query.name, req.query.year)
     movieData.then(result => {
-        mini_result = {Title: result.Title, Plot:result.Plot, Poster: result.Poster, Year: result.Year}
-        res.render('result', {data: mini_result, name: req.query.name, year: req.query.year})
+        const miniResult = {Title: result.Title, Plot:result.Plot, Poster: result.Poster, Year: result.Year}
+        res.render('result', {data: miniResult, name: req.query.name, year: req.query.year})
         // console.log(result)
     }).catch((err) => {
         console.err(err)
