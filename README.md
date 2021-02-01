@@ -12,7 +12,7 @@ Create a .env file in the same folder as server.js
 
 Add line
 
-```API_KEY="{Your api-key}"``
+```API_KEY="{Your api-key}"```
 
 ## Usage
 
