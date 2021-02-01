@@ -2,8 +2,7 @@ require("dotenv").config()
 const express = require("express");
 const fetch = require("node-fetch")
 const app = express();
-let port = '5000';
-let domain = 'localhost';
+let port = process.env.PORT || 3000;
 app.set("view engine", "ejs")
 app.use(express.static("public"))
 async function getInfo(movieName, year){
@@ -15,7 +14,7 @@ async function getInfo(movieName, year){
     return data
 }
 app.listen(port, () => {
-    console.log(`Listening at ${domain}:${port}`)
+    console.log(`Listening at ${port}`)
 })
 app.get('/', (req, res)=>{
     res.sendFile('./views/index.html', {root: __dirname})
