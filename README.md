@@ -2,6 +2,8 @@
 
 Search for any movie and retrieve info using the OMDB api.
 
+[Click here for demo.](https://shielded-bayou-51375.herokuapp.com/)
+
 ## Installation
 
 ```npm install```
